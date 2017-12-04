@@ -5,6 +5,9 @@ export class UsernameValidators{
 
     cannotContainSpace(control:AbstractControl) : ValidationErrors | null
     {
-        return null;
+       if((<string>control.value).indexOf(' ')>=0)
+       {
+           return 
+       }
     }
 }
