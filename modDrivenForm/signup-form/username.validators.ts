@@ -11,4 +11,20 @@ export class UsernameValidators{
        }
        return null;
     }
+
+    static beUnique(control:AbstractControl):Promise<ValidationErrors | null> 
+    {
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                if(control.value === 'pulkit')
+                {
+                    resolve ({ beunique:true });
+                } 
+                else 
+                resolve(null);
+                
+            },2000);
+        });
+        
+    }
 }
